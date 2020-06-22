@@ -1,0 +1,21 @@
+---
+name: check-ports
+
+templates:
+  run.sh: bin/run
+  port-checks.cfg.erb: config/port-checks.cfg
+
+packages: []
+
+properties:
+  port-check:
+    # Example:
+    #
+    #  port-check:
+    #  - host: 127.0.0.1
+    #  - port: 22
+    #  - protocol: tcp (the default, in fact udp will always succeed)
+    #  - should_fail: false
+    #  - description: make sure SSH is available
+    description: "Array of host/port/protocol tuples to validate are accessible from this job's location"
+    default: []

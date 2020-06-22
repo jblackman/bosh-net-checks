@@ -1,0 +1,11 @@
+---
+tests:
+- host: 127.0.0.1
+  port: 22
+  protocol: tcp
+  description: make sure SSH is running
+- host: 127.0.0.1
+  port: 9988
+  protocol: tcp
+  should_fail: true
+  description: Should not be able to connect to port 9988

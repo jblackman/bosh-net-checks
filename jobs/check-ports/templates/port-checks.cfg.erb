@@ -1,0 +1,18 @@
+# This file holds all of the host/port/protocols tuples that we want to verify are
+# accessible from this VM.
+#
+# HOST PORT PROTOCOL DESCRIPTION
+#
+<%=
+  out = []
+  p('port-check').each do |pc|
+    out << [
+      pc['host'],
+      pc['port'],
+      pc.fetch('protocol', 'tcp'),
+      pc.fetch('should_fail', 'false'),
+      pc.fetch('description', '')
+    ]
+  end
+  out.map{|a| a.join("\t")}.join("\n")
+%>
